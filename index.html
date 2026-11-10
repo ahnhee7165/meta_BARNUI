@@ -12,13 +12,13 @@
     color-scheme: light;
     --bg: #f5f4f1; --card: #ffffff; --ink: #1c2233; --muted: #6b6f7a; --line: #e6e2da; --soft: #faf8f4;
     --accent: #23335a; --accent-2: #b08d57; --accent-soft: #f1ece3; --up: #0f9d6a; --down: #e0473c;
-    --bar: #9cc0fb; --lineclr: #1d4ed8; --gold: #f2a516;
+    --bar: #d9cbb0; --lineclr: #23335a; --gold: #f2a516;
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--ink); font-family: "Noto Sans KR", system-ui, sans-serif; font-size: 14px; word-break: keep-all; overflow-wrap: break-word; }
   p, .note, h1, h2 { text-wrap: pretty; }
   .wrap { max-width: 1280px; margin: 0 auto; padding: 0 16px; }
-  .hero { background: linear-gradient(120deg, #1d4ed8 0%, #2563eb 45%, #4f8ff7 100%); color: #fff; }
+  .hero { background: linear-gradient(120deg, #172340 0%, #23335a 55%, #3a4d78 100%); color: #fff; }
   .hero-in { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 14px; padding: 26px 16px 64px; }
   h1 { font-size: 22px; margin: 0; letter-spacing: -0.02em; }
   .sub { color: rgba(255,255,255,.8); font-size: 12px; margin-top: 6px; }
@@ -27,7 +27,7 @@
   .hero select, .hero input, .hero button { border-color: transparent; }
   button { cursor: pointer; }
   .hero #csv { background: rgba(255,255,255,.16); color: #fff; border: 1px solid rgba(255,255,255,.45); }
-  .panel { background: var(--card); border-radius: 16px; box-shadow: 0 6px 24px rgba(37,99,235,.08); margin-top: -44px; position: relative; }
+  .panel { background: var(--card); border-radius: 16px; box-shadow: 0 6px 24px rgba(35,51,90,.08); margin-top: -44px; position: relative; }
   .acc-tabs { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 16px 0; }
   .tab { padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--card); font-size: 13px; font-weight: 500; color: var(--muted); }
   .tab:hover { border-color: var(--accent-2); color: var(--accent); }
@@ -63,7 +63,7 @@
   th, td { padding: 9px 10px; border-bottom: 1px solid var(--line); text-align: right; white-space: nowrap; }
   th { color: var(--muted); font-weight: 500; font-size: 12px; cursor: pointer; user-select: none; background: var(--soft); }
   th:first-child, td:first-child { text-align: left; white-space: normal; min-width: 130px; }
-  tbody tr:hover td, tr:hover td { background: #fafcff; }
+  tbody tr:hover td, tr:hover td { background: #fbf9f5; }
   tr.total td { font-weight: 700; border-top: 2px solid var(--accent); background: var(--accent-soft); }
   .bar { height: 4px; background: var(--accent-2); border-radius: 2px; margin-top: 4px; opacity: .7; }
   .badge { display: inline-block; font-size: 11px; padding: 1px 6px; border-radius: 4px; margin-left: 6px; background: var(--accent-soft); color: var(--accent); vertical-align: 1px; }
@@ -81,7 +81,7 @@
   @media (max-width: 960px) { .cr-grid { grid-template-columns: repeat(3, 1fr); } }
   @media (max-width: 560px) { .cr-grid { grid-template-columns: repeat(2, 1fr); } }
   .cr { border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--card); position: relative; transition: box-shadow .15s; }
-  .cr:hover { box-shadow: 0 6px 18px rgba(37,99,235,.14); }
+  .cr:hover { box-shadow: 0 6px 18px rgba(35,51,90,.14); }
   .cr .thumb { aspect-ratio: 1 / 1; background: var(--soft); display: block; width: 100%; object-fit: cover; }
   .cr .nothumb { aspect-ratio: 1 / 1; background: var(--soft); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; }
   .cr .rank { position: absolute; top: 8px; left: 8px; background: var(--accent); color: #fff; font-size: 12px; font-weight: 700; width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 4px rgba(0,0,0,.2); }
@@ -567,8 +567,8 @@ function drawTraffic(cur, since, until) {
     data: {
       labels: dates.map(d => d.slice(5)),
       datasets: [
-        { type: "bar", label: bl, data: daily.map(s => s[bk]), backgroundColor: "#c7dafc", yAxisID: "y", borderRadius: 3, order: 2 },
-        { type: "line", label: ll, data: daily.map(s => s[lk] * lmul), borderColor: "#0ea5a4", backgroundColor: "#0ea5a4", yAxisID: "y1", order: 1, borderWidth: 2.5, tension: 0.3, pointRadius: dates.length > 60 ? 0 : 2 },
+        { type: "bar", label: bl, data: daily.map(s => s[bk]), backgroundColor: "#e3d8c4", yAxisID: "y", borderRadius: 3, order: 2 },
+        { type: "line", label: ll, data: daily.map(s => s[lk] * lmul), borderColor: "#b08d57", backgroundColor: "#b08d57", yAxisID: "y1", order: 1, borderWidth: 2.5, tension: 0.3, pointRadius: dates.length > 60 ? 0 : 2 },
       ],
     },
     options: {
