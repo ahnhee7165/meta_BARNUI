@@ -1,0 +1,7 @@
+{
+  "client": "BARNUI",
+  "products": false,
+  "accounts": [
+    { "id": "604685703701286", "name": "바르누이", "type": "own" }
+  ]
+}
